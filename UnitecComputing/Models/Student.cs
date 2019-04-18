@@ -16,7 +16,16 @@ namespace UnitecComputing.Models
         public string FirstMidName { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}",ApplyFormatInEditMode = true)]
+        [Display(Name = "Enrollment Date")]
         public DateTime EnrollmentDate { get; set; }
+        [Display(Name = "Full Name")] //Week 4
+        public string FullName
+        {
+            get
+            {
+                return LastName + ", " + FirstMidName;
+            }
+        }
         public ICollection<Enrollment> Enrollments { get; set; }
     }
 }
